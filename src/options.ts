@@ -10,7 +10,6 @@ export enum TypeFunctionVerb {
   'Remove' = 'Remove',
   'Request' = 'Request',
   'Retrieve' = 'Retrieve',
-  'Take' = 'Take',
 }
 
 export enum TypeSideEffectVerb {
@@ -19,6 +18,7 @@ export enum TypeSideEffectVerb {
   'Initialize' = 'Initialize',
   'Invoke' = 'Invoke',
   'Set' = 'Set',
+  'Take' = 'Take',
 }
 
 export enum TypeReturn {

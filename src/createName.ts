@@ -1,4 +1,4 @@
-import { State, TypeFunc, TypeFunctionVerb, TypeReturn } from 'options'
+import { State, TypeFunc, TypeReturn } from 'options'
 
 function camelize(str: string) {
   return str
@@ -33,33 +33,50 @@ const contentChange = (state: State): CompositionType => {
     composition.returnType = ''
   }
 
+  if (composition.verb === 'Initialize') {
+    composition.verb = 'Init'
+  }
+
   if (state.ninjaMode) {
     composition.returnType = 'data'
-    composition.context = 'Func'
+    composition.context = ''
     composition.preposition = ''
+    composition.verb = composition.verb
+      .split('')
+      .filter((e, i) => {
+        if (i == 0 && e.match(/(a|e|i|o|u)/gi)) {
+          return true
+        }
+
+        if (e.match(/(a|e|i|o|u)/gi)) {
+          return false
+        }
+
+        return true
+      })
+      .join('')
   }
 
   return composition
 }
 
 const setOrder = (composition: CompositionType, state: State): string[] => {
-  const isFunctional = state.type === TypeFunc.Functional
-
   let order = [composition.verb, composition.returnType, composition.context]
 
-  if (
-    isFunctional &&
-    [TypeFunctionVerb.Add, TypeFunctionVerb.Remove].indexOf(
-      state.functionalVerb
-    ) !== -1
-  ) {
-    order = [
-      composition.verb,
-      state.context,
-      composition.preposition,
-      composition.returnType,
-    ]
-  }
+  // const isFunctional = state.type === TypeFunc.Functional
+  // if (
+  //   isFunctional &&
+  //   [TypeFunctionVerb.Add, TypeFunctionVerb.Remove].indexOf(
+  //     state.functionalVerb
+  //   ) !== -1
+  // ) {
+  //   order = [
+  //     composition.verb,
+  //     state.context,
+  //     composition.preposition,
+  //     composition.returnType,
+  //   ]
+  // }
 
   if (state.reactHook) {
     order = ['use', ...order]

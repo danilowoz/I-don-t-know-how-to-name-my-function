@@ -1,6 +1,18 @@
 import React from 'react'
 import '../styles/tailwind.css'
+import { NextSeo } from 'next-seo'
+import type { AppProps } from 'next/app'
 
-export default function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+function MyApp({ Component, pageProps }: AppProps) {
+  return (
+    <>
+      <NextSeo
+        title="Naming my function"
+        description="A short description goes here."
+      />
+      <Component {...pageProps} />
+    </>
+  )
 }
+
+export default MyApp
