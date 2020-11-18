@@ -1,9 +1,8 @@
 import React from 'react'
 import '../../styles/index.css'
 import { NextSeo } from 'next-seo'
-import type { AppProps } from 'next/app'
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps }: any) {
   return (
     <>
       <NextSeo

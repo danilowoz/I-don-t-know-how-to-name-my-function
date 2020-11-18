@@ -15,8 +15,8 @@ const SyntaxHighlight: React.FC<{ code: string; state: State }> = ({
     >
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
         <div
-          className={`bg-${
-            isNinjaMode ? 'gray-900' : 'white'
+          className={`${
+            isNinjaMode ? 'bg-gray-900' : 'bg-white'
           } transition duration-200 transition-all ease-in-out shadow sm:rounded-lg p-10 text-xl`}
         >
           <p className="font-light tracking-wide">
