@@ -7,11 +7,11 @@ import {
   TypeFunctionVerb,
   TypeReturn,
   TypeSideEffectVerb,
-} from 'options'
-import Form from 'Form'
-import SyntaxHighlight from 'syntax'
-import createName from 'createName'
-import Footer from 'footer'
+} from 'components/options'
+import Form from 'components/Form'
+import SyntaxHighlight from 'components/syntax'
+import Footer from 'components/footer'
+import createName from 'components/createName'
 
 const IndexPage: React.FC = () => {
   const [state, setState] = useState<State>({

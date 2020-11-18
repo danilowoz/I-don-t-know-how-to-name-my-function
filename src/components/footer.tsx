@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Footer: React.FC = () => {
+const Footer = () => {
   return (
     <>
       <div className="pt-2 absolute" style={{ bottom: 0, right: 32, left: 32 }}>

@@ -1,4 +1,4 @@
-import { State, TypeFunc, TypeReturn } from 'options'
+import { State, TypeFunc, TypeReturn } from './options'
 
 function camelize(str: string) {
   return str

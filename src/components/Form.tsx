@@ -6,7 +6,7 @@ import {
   TypeFunctionVerb,
   TypeReturn,
   TypeSideEffectVerb,
-} from 'options'
+} from 'components/options'
 
 const classNames = {
   tabsWrapper:

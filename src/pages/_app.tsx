@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/tailwind.css'
+import '../../styles/index.css'
 import { NextSeo } from 'next-seo'
 import type { AppProps } from 'next/app'
 

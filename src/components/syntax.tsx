@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import React from 'react'
 
-import { State } from 'options'
+import { State } from 'components/options'
 
 const SyntaxHighlight: React.FC<{ code: string; state: State }> = ({
   code,
