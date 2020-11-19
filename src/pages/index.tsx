@@ -88,7 +88,7 @@ const IndexPage: React.FC = () => {
                       <a
                         target="_blank"
                         rel="noreferrer"
-                        href={`https://twitter.com/intent/tweet?text=${data.description}%20%0A%0Ah${data.domain}`}
+                        href={`https://twitter.com/intent/tweet?text=${data.description}%20%0A%0A${data.domain}`}
                         className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-indigo-700 bg-indigo-100 hover:text-indigo-600 hover:bg-indigo-50 focus:outline-none focus:shadow-outline-indigo focus:border-indigo-300 transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10"
                       >
                         <span
