@@ -10,11 +10,11 @@ import {
 
 const classNames = {
   tabsWrapper:
-    'bg-gray-200 mt-3 text-sm text-gray-500 leading-none border-2 border-gray-200 rounded-full inline-flex',
+    'bg-gray-200 mt-3 text-sm text-gray-500 leading-none border-2 border-gray-200 overflow-hidden rounded-full inline-flex',
   tabRegular:
     'inline-flex items-center transition-all duration-300 ease-in active:outline-none focus:outline-none hover:text-indigo-600 rounded-l-full px-4 py-2 active',
   tabActive: 'bg-white text-indigo-600 rounded-full',
-  title: 'text-2xl text-gray-600 mt-10',
+  title: 'text-xl text-gray-600 mt-8',
 }
 
 const Form: React.FC<{
@@ -151,7 +151,7 @@ const Form: React.FC<{
       */}
         {isFunctional ? (
           <p className={classNames.title}>
-            Where it will <span className="text-indigo-600">get from?</span>
+            Where will data <span className="text-indigo-600">come from?</span>
           </p>
         ) : (
           <p className={classNames.title}>
@@ -173,7 +173,7 @@ const Form: React.FC<{
         />
       </div>
 
-      <div className="p-6 bg-gray-100">
+      <div className="p-6 bg-gray-100 sm:rounded-lg rounded-b-none">
         <div className="flex flex-row">
           <div className="mr-10">
             <p className={classNames.title} style={{ marginTop: 0 }}>

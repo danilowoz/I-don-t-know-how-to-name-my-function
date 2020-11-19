@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import React from 'react'
+import React, { useEffect } from 'react'
+import Clipboard from 'clipboard'
 
 import { State } from 'components/options'
 
@@ -8,12 +9,41 @@ const SyntaxHighlight: React.FC<{ code: string; state: State }> = ({
   state,
 }) => {
   const isNinjaMode = state.ninjaMode
+
+  useEffect(() => {
+    const clipBoard = new Clipboard('#copy-to-clipboard')
+
+    return () => {
+      clipBoard.destroy()
+    }
+  }, [])
+
   return (
     <div
       className="absolute font-sans overflow-hidden"
       style={{ width: '70%', left: '15%', top: '45%' }}
     >
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+        <button
+          id="copy-to-clipboard"
+          data-clipboard-text={`function ${code} {}`}
+          className="absolute"
+          style={{ right: '1em', top: '1em' }}
+        >
+          <svg
+            className="fill-current cursor-pointer transition duration-200 transition-all ease-in-out text-gray-400 hover:text-gray-600 w-4"
+            xmlns="http://www.w3.org/2000/svg"
+            width="100%"
+            height="100%"
+            version="1.1"
+            viewBox="0 0 477.867 477.867"
+            xmlSpace="preserve"
+          >
+            <path d="M341.333 85.333H51.2c-28.277 0-51.2 22.923-51.2 51.2v290.133c0 28.277 22.923 51.2 51.2 51.2h290.133c28.277 0 51.2-22.923 51.2-51.2V136.533c0-28.277-22.923-51.2-51.2-51.2zM358.4 426.667c0 9.426-7.641 17.067-17.067 17.067H51.2c-9.426 0-17.067-7.641-17.067-17.067V136.533c0-9.426 7.641-17.067 17.067-17.067h290.133c9.426 0 17.067 7.641 17.067 17.067v290.134z" />
+            <path d="M426.667 0h-307.2c-28.277 0-51.2 22.923-51.2 51.2 0 9.426 7.641 17.067 17.067 17.067S102.4 60.626 102.4 51.2s7.641-17.067 17.067-17.067h307.2c9.426 0 17.067 7.641 17.067 17.067v307.2c0 9.426-7.641 17.067-17.067 17.067s-17.067 7.641-17.067 17.067 7.641 17.067 17.067 17.067c28.277 0 51.2-22.923 51.2-51.2V51.2c0-28.277-22.923-51.2-51.2-51.2z" />
+          </svg>
+        </button>
+
         <div
           className={`${
             isNinjaMode ? 'bg-gray-900' : 'bg-white'
