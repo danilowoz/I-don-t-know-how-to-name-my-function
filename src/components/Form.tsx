@@ -3,7 +3,7 @@ import React from 'react'
 import {
   State,
   TypeFunc,
-  TypeFunctionVerb,
+  TypePureVerb,
   TypeReturn,
   TypeSideEffectVerb,
 } from 'components/options'
@@ -21,7 +21,7 @@ const Form: React.FC<{
   state: State
   setState: React.Dispatch<React.SetStateAction<State>>
 }> = ({ setState, state }) => {
-  const isFunctional = state.type === TypeFunc.Functional
+  const isPure = state.type === TypeFunc.Pure
 
   return (
     <>
@@ -67,20 +67,20 @@ const Form: React.FC<{
           <span className="text-indigo-600">action</span> of the function?
         </p>
 
-        {isFunctional && (
+        {isPure && (
           <div className={classNames.tabsWrapper}>
-            {Object.values(TypeFunctionVerb).map((item) => {
+            {Object.values(TypePureVerb).map((item) => {
               return (
                 <button
                   key={item}
                   onClick={() =>
                     setState((prev) => ({
                       ...prev,
-                      functionalVerb: item,
+                      pureVerb: item,
                     }))
                   }
                   className={`${
-                    item === state.functionalVerb && classNames.tabActive
+                    item === state.pureVerb && classNames.tabActive
                   } ${classNames.tabRegular}`}
                   id="grid"
                 >
@@ -91,7 +91,7 @@ const Form: React.FC<{
           </div>
         )}
 
-        {!isFunctional && (
+        {!isPure && (
           <div className={classNames.tabsWrapper}>
             {Object.values(TypeSideEffectVerb).map((item) => {
               return (
@@ -115,7 +115,7 @@ const Form: React.FC<{
           </div>
         )}
 
-        {isFunctional && (
+        {isPure && (
           <>
             <p className={classNames.title}>
               What is the <span className="text-indigo-600">return?</span>
@@ -149,7 +149,7 @@ const Form: React.FC<{
         Context
 
       */}
-        {isFunctional ? (
+        {isPure ? (
           <p className={classNames.title}>
             Where will data <span className="text-indigo-600">come from?</span>
           </p>

@@ -1,9 +1,9 @@
 export enum TypeFunc {
-  'Functional' = 'Functional',
+  'Pure' = 'Pure',
   'Side-effect' = 'Side-effect',
 }
 
-export enum TypeFunctionVerb {
+export enum TypePureVerb {
   'Get' = 'Get',
   'Add' = 'Add',
   'Format' = 'Format',
@@ -31,7 +31,7 @@ export enum TypeReturn {
 
 export type State = {
   type: TypeFunc
-  functionalVerb: TypeFunctionVerb
+  pureVerb: TypePureVerb
   sideEffectVerb: TypeSideEffectVerb
   functionReturnType: TypeReturn
   context: string

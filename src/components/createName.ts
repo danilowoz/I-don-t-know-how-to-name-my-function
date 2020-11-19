@@ -16,16 +16,14 @@ type CompositionType = {
 }
 
 const contentChange = (state: State): CompositionType => {
-  const isFunctional = state.type === TypeFunc.Functional
-  const verb: string = isFunctional
-    ? state.functionalVerb
-    : state.sideEffectVerb
-  const returnType = isFunctional ? state.functionReturnType : ''
+  const isPure = state.type === TypeFunc.Pure
+  const verb: string = isPure ? state.pureVerb : state.sideEffectVerb
+  const returnType = isPure ? state.functionReturnType : ''
   const composition = {
     verb,
     context: state.context,
     returnType,
-    preposition: isFunctional ? 'from' : 'on',
+    preposition: isPure ? 'from' : 'on',
   }
 
   if (returnType === TypeReturn.Boolean) {
@@ -68,11 +66,11 @@ const setOrder = (composition: CompositionType, state: State): string[] => {
     composition.context,
   ]
 
-  // const isFunctional = state.type === TypeFunc.Functional
+  // const isPure = state.type === TypeFunc.Pure
   // if (
-  //   isFunctional &&
+  //   isPure &&
   //   [TypeFunctionVerb.Add, TypeFunctionVerb.Remove].indexOf(
-  //     state.functionalVerb
+  //     state.PureVerb
   //   ) !== -1
   // ) {
   //   order = [

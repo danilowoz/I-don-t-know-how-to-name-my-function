@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import {
   State,
   TypeFunc,
-  TypeFunctionVerb,
+  TypePureVerb,
   TypeReturn,
   TypeSideEffectVerb,
 } from 'components/options'
@@ -16,8 +16,8 @@ import data from 'components/data'
 
 const IndexPage: React.FC = () => {
   const [state, setState] = useState<State>({
-    type: TypeFunc.Functional,
-    functionalVerb: TypeFunctionVerb.Get,
+    type: TypeFunc.Pure,
+    pureVerb: TypePureVerb.Get,
     sideEffectVerb: TypeSideEffectVerb.Detach,
     functionReturnType: TypeReturn['List'],
     context: 'Table view',
