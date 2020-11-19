@@ -1,37 +1,5 @@
-# name-my-function
 
-Next project generated using [significa-start](https://github.com/Significa/significa-start)
 
-## Install dependencies
+# [I don't know how to name my function](https://namingmyfunction.vercel.app/)
 
-```
-npm install
-```
-
-## Run project
-
-```
-npm run dev
-```
-
-## Build project
-
-```
-npm run build
-```
-
-## Run build
-
-```
-npm run start
-```
-
-## Static type checking
-
-```
-npm run validate
-```
-
----
-
-<br /><a href="https://significa.co"><img src="https://user-images.githubusercontent.com/4838076/70076649-20d29b00-15f7-11ea-9379-e2fa1889a525.png" alt="logo" width="300px"></a>
+![Screenshot 2020-11-19 at 09 21 09](https://user-images.githubusercontent.com/4838076/99646624-9e7df980-2a48-11eb-8983-cba483b15a07.png)
