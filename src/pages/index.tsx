@@ -12,6 +12,7 @@ import Form from 'components/Form'
 import SyntaxHighlight from 'components/syntax'
 import Footer from 'components/footer'
 import createName from 'components/createName'
+import data from 'components/data'
 
 const IndexPage: React.FC = () => {
   const [state, setState] = useState<State>({
@@ -19,7 +20,7 @@ const IndexPage: React.FC = () => {
     functionalVerb: TypeFunctionVerb.Get,
     sideEffectVerb: TypeSideEffectVerb.Detach,
     functionReturnType: TypeReturn['List'],
-    context: 'Function name',
+    context: 'Table view',
     ninjaMode: false,
     reactHook: false,
   })
@@ -52,10 +53,14 @@ const IndexPage: React.FC = () => {
                     Development can be more challenging than you thought.
                   </span>{' '}
                   It&apos;s not about algorithms, data structures, or whatever,
-                  but about naming function and variables! (fearful face)
+                  but about naming functions and variables! (fearful face)
                   Here&apos;s a tool to help you in this intense journey: naming
                   a function.
                 </p>
+
+                <div className="lg:hidden block relative font-sans overflow-hidden mt-10">
+                  <SyntaxHighlight state={state} code={createName(state)} />
+                </div>
 
                 <AnimatePresence>
                   {started && (
@@ -74,15 +79,33 @@ const IndexPage: React.FC = () => {
                     <div className="rounded-md shadow">
                       <button
                         onClick={() => setStarted(true)}
-                        className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10"
+                        className="shadow-xl w-full flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10"
                       >
                         Get started
                       </button>
                     </div>
                     <div className="mt-3 sm:mt-0 sm:ml-3">
-                      <button className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-indigo-700 bg-indigo-100 hover:text-indigo-600 hover:bg-indigo-50 focus:outline-none focus:shadow-outline-indigo focus:border-indigo-300 transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10">
+                      <a
+                        target="_blank"
+                        rel="noreferrer"
+                        href={`https://twitter.com/intent/tweet?text=${data.description}%20%0A%0Ah${data.domain}`}
+                        className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-indigo-700 bg-indigo-100 hover:text-indigo-600 hover:bg-indigo-50 focus:outline-none focus:shadow-outline-indigo focus:border-indigo-300 transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10"
+                      >
+                        <span
+                          className="text-indigo-500 mr-3"
+                          style={{ width: 20 }}
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="100%"
+                            viewBox="0 0 24 24"
+                            className="fill-current "
+                          >
+                            <path d="M24 4.557a9.83 9.83 0 01-2.828.775 4.932 4.932 0 002.165-2.724 9.864 9.864 0 01-3.127 1.195 4.916 4.916 0 00-3.594-1.555c-3.179 0-5.515 2.966-4.797 6.045A13.978 13.978 0 011.671 3.149a4.93 4.93 0 001.523 6.574 4.903 4.903 0 01-2.229-.616c-.054 2.281 1.581 4.415 3.949 4.89a4.935 4.935 0 01-2.224.084 4.928 4.928 0 004.6 3.419A9.9 9.9 0 010 19.54a13.94 13.94 0 007.548 2.212c9.142 0 14.307-7.721 13.995-14.646A10.025 10.025 0 0024 4.557z" />
+                          </svg>
+                        </span>
                         Share
-                      </button>
+                      </a>
                     </div>
                   </div>
                 )}
@@ -94,11 +117,16 @@ const IndexPage: React.FC = () => {
         </div>
 
         <div
-          className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 bg-right bg-cover bg-fixed"
+          className="hidden lg:block absolute inset-y-0 right-0 w-1/2 bg-right bg-cover bg-fixed"
           style={{ backgroundImage: 'url(hero.jpg)' }}
         >
           {started && (
-            <SyntaxHighlight state={state} code={createName(state)} />
+            <div
+              className="absolute font-sans overflow-hidden"
+              style={{ width: '70%', left: '15%', top: '45%' }}
+            >
+              <SyntaxHighlight state={state} code={createName(state)} />
+            </div>
           )}
         </div>
       </div>

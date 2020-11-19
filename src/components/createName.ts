@@ -25,7 +25,7 @@ const contentChange = (state: State): CompositionType => {
     verb,
     context: state.context,
     returnType,
-    preposition: 'from',
+    preposition: isFunctional ? 'from' : 'on',
   }
 
   if (returnType === TypeReturn.Boolean) {
@@ -61,7 +61,12 @@ const contentChange = (state: State): CompositionType => {
 }
 
 const setOrder = (composition: CompositionType, state: State): string[] => {
-  let order = [composition.verb, composition.returnType, composition.context]
+  let order = [
+    composition.verb,
+    composition.returnType,
+    composition.preposition,
+    composition.context,
+  ]
 
   // const isFunctional = state.type === TypeFunc.Functional
   // if (

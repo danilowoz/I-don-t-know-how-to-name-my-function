@@ -1,25 +1,24 @@
 import React from 'react'
 import '../../styles/index.css'
 import { NextSeo } from 'next-seo'
+import ReactGA from 'react-ga'
 
-const domain = 'http://namingmyfunction.vercel.app/'
+import data from 'components/data'
+
+ReactGA.initialize('G-5DPGX77TYQ')
 
 function MyApp({ Component, pageProps }: any) {
   return (
     <>
       <NextSeo
-        title="I don't know how to name my function"
-        description="It's not about algorithms, data structures, or whatever, but about naming function and variables! Here's a tool to help you in this intense journey: naming a function."
+        title={data.title}
+        description={data.description}
         openGraph={{
-          url: domain,
-          title: `I don't know how to name my function`,
-          description: 'Open Graph Description',
-          images: [
-            {
-              url: `${domain}/share.jpg`,
-            },
-          ],
-          site_name: 'SiteName',
+          url: data.domain,
+          title: data.title,
+          description: data.description,
+          images: [{ url: `${data.domain}/share.jpg` }],
+          site_name: data.title,
         }}
         twitter={{
           cardType: 'summary_large_image',

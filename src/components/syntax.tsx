@@ -19,10 +19,7 @@ const SyntaxHighlight: React.FC<{ code: string; state: State }> = ({
   }, [])
 
   return (
-    <div
-      className="absolute font-sans overflow-hidden"
-      style={{ width: '70%', left: '15%', top: '45%' }}
-    >
+    <>
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
         <button
           id="copy-to-clipboard"
@@ -47,7 +44,7 @@ const SyntaxHighlight: React.FC<{ code: string; state: State }> = ({
         <div
           className={`${
             isNinjaMode ? 'bg-gray-900' : 'bg-white'
-          } transition duration-200 transition-all ease-in-out shadow sm:rounded-lg p-10 text-xl`}
+          } transition duration-200 transition-all ease-in-out shadow rounded-lg p-10 text-xl`}
         >
           <p className="font-light tracking-wide">
             <span className="text-gray-500">function</span>{' '}
@@ -88,7 +85,7 @@ const SyntaxHighlight: React.FC<{ code: string; state: State }> = ({
         className="absolute"
         style={{ width: 100, bottom: -10, right: -10 }}
       />
-    </div>
+    </>
   )
 }
 

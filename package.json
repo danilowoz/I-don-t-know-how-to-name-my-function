@@ -26,7 +26,8 @@
     "postcss-import": "^13.0.0",
     "postcss-preset-env": "^6.7.0",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-ga": "^3.2.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
