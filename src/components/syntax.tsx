@@ -59,14 +59,14 @@ const SyntaxHighlight: React.FC<{ code: string; state: State }> = ({
                 exit={{ opacity: 0, marginTop: 0, height: 0 }}
                 className="font-light text-sm text-gray-700 overflow-hidden tracking-wide"
               >
-                Do not be a ninja developer,{' '}
+                Don&apos;t be a ninja developer,{' '}
                 <a
                   className="text-indigo-600 underline"
                   href="https://javascript.info/ninja-code"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  here is why
+                  here&apos;s why
                 </a>
               </motion.p>
             )}
