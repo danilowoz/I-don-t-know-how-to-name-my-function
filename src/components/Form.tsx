@@ -163,9 +163,10 @@ const Form: React.FC<{
         <input
           placeholder="Type here..."
           onChange={(event) => {
+            event.persist()
             setState((prev) => ({
               ...prev,
-              context: event.target.value,
+              context: event?.target?.value,
             }))
           }}
           defaultValue={state.context}
