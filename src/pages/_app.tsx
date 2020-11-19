@@ -1,11 +1,8 @@
 import React from 'react'
 import '../../styles/index.css'
 import { NextSeo } from 'next-seo'
-import ReactGA from 'react-ga'
 
 import data from 'components/data'
-
-ReactGA.initialize('G-5DPGX77TYQ')
 
 function MyApp({ Component, pageProps }: any) {
   return (
