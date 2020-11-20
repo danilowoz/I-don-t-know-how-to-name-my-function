@@ -50,7 +50,7 @@ const IndexPage: React.FC = () => {
                 </h2>
                 <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
                   <span className="text-gray-600">
-                    Development can be more challenging than you thought.
+                    Development can be more challenging than you think.
                   </span>{' '}
                   It&apos;s not about algorithms, data structures, or whatever,
                   but about naming functions and variables! (fearful face)
