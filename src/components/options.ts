@@ -19,6 +19,7 @@ export enum TypeSideEffectVerb {
   'Invoke' = 'Invoke',
   'Set' = 'Set',
   'Take' = 'Take',
+  'Go' = 'Go',
 }
 
 export enum TypeReturn {
