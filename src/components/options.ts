@@ -13,10 +13,10 @@ export enum TypePureVerb {
 }
 
 export enum TypeSideEffectVerb {
-  'Detach' = 'Detach',
+  'Compose' = 'Compose',
   'Dispatch' = 'Dispatch',
   'Initialize' = 'Initialize',
-  'Invoke' = 'Invoke',
+  'Fetch' = 'Fetch',
   'Set' = 'Set',
   'Take' = 'Take',
   'Go' = 'Go',
