@@ -1,31 +1,31 @@
-import React, { useState } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
+import React, { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 
 import {
   State,
   TypeFunc,
   TypePureVerb,
   TypeReturn,
-  TypeSideEffectVerb,
-} from 'components/options'
-import Form from 'components/Form'
-import SyntaxHighlight from 'components/syntax'
-import Footer from 'components/footer'
-import createName from 'components/createName'
-import data from 'components/data'
+  TypeSideEffectVerb
+} from "components/options";
+import Form from "components/Form";
+import SyntaxHighlight from "components/syntax";
+import Footer from "components/footer";
+import createName from "components/createName";
+import data from "components/data";
 
 const IndexPage: React.FC = () => {
   const [state, setState] = useState<State>({
     type: TypeFunc.Pure,
     pureVerb: TypePureVerb.Get,
     sideEffectVerb: TypeSideEffectVerb.Detach,
-    functionReturnType: TypeReturn['List'],
-    context: 'Table view',
+    functionReturnType: TypeReturn["List"],
+    context: "Table view",
     ninjaMode: false,
-    reactHook: false,
-  })
+    reactHook: false
+  });
 
-  const [started, setStarted] = useState(false)
+  const [started, setStarted] = useState(false);
 
   return (
     <>
@@ -51,7 +51,7 @@ const IndexPage: React.FC = () => {
                 <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
                   <span className="text-gray-600">
                     Development can be more challenging than you think.
-                  </span>{' '}
+                  </span>{" "}
                   It&apos;s not about algorithms, data structures, or whatever,
                   but about naming functions and variables! (fearful face)
                   Here&apos;s a tool to help you in this intense journey: naming
@@ -118,12 +118,12 @@ const IndexPage: React.FC = () => {
 
         <div
           className="hidden lg:block absolute inset-y-0 right-0 w-1/2 bg-right bg-cover bg-fixed"
-          style={{ backgroundImage: 'url(hero.jpg)' }}
+          style={{ backgroundImage: "url(hero.jpg)" }}
         >
           {started && (
             <div
               className="absolute font-sans overflow-hidden"
-              style={{ width: '70%', left: '15%', top: '45%' }}
+              style={{ width: "70%", left: "15%", top: "45%" }}
             >
               <SyntaxHighlight state={state} code={createName(state)} />
             </div>
@@ -131,7 +131,7 @@ const IndexPage: React.FC = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default IndexPage
+export default IndexPage;
